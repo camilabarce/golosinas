@@ -90,7 +90,7 @@ function cargarProductos(productos) {
       const div = document.createElement("div");
       div.classList.add("carrito-producto");
       div.innerHTML = `
-        <img class="carrito-producto-imagen admin" src="http://localhost:3000${producto.imagen}" alt="${producto.descripcion}">
+        <img class="carrito-producto-imagen admin" src="https://golosinas-commerce.up.railway.app${producto.imagen}" alt="${producto.descripcion}">
         <div class="carrito-producto-titulo">
           <small>Descripción</small>
           <h3>${producto.descripcion}</h3>
