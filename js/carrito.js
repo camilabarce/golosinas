@@ -31,7 +31,7 @@ function cargarProductosCarrito() {
             const div = document.createElement("div");
             div.classList.add("carrito-producto");
             div.innerHTML = `
-                <img class="carrito-producto-imagen" src="http://localhost:3000${producto.imagen}" alt="${producto.descripcion}">
+                <img class="carrito-producto-imagen" src="https://golosinas-commerce.up.railway.app${producto.imagen}" alt="${producto.descripcion}">
                 <div class="carrito-producto-titulo">
                     <small>Título</small>
                     <h3>${producto.descripcion}</h3>
