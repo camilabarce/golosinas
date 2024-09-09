@@ -5,7 +5,7 @@ const contenedorProductos = document.querySelector("#contenedor-productos");
 const tituloPrincipal = document.querySelector("#titulo-principal");
 let numerito;
 
-fetch("http://localhost:3000/products")
+fetch("https://golosinas-commerce.up.railway.app/products")
     .then(response => response.json())
     .then(data => {
         productos = data;
@@ -13,7 +13,7 @@ fetch("http://localhost:3000/products")
     })
     .catch(error => console.error('Error al obtener los productos:', error));
 
-fetch("http://localhost:3000/categories")
+fetch("https://golosinas-commerce.up.railway.app/categories")
     .then(response => response.json())
     .then(categories => {
         cargarCategorias(categories);
@@ -87,7 +87,7 @@ function cargarProductos(productosElegidos) {
             const div = document.createElement("div");
             div.classList.add("producto");
             div.innerHTML = `
-                <img class="producto-imagen" src="http://localhost:3000/${producto.imagen}" alt="${producto.descripcion}">
+                <img class="producto-imagen" src="https://golosinas-commerce.up.railway.app/${producto.imagen}" alt="${producto.descripcion}">
                 <div class="producto-detalles">
                     <h3 class="producto-titulo">${producto.descripcion}</h3>
                     <p class="producto-precio">$${producto.precio_unidad}</p>

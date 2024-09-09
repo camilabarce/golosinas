@@ -1,4 +1,4 @@
-// fetch("http://localhost:3000/products")
+// fetch("https://golosinas-commerce.up.railway.app/products")
 //     .then(response => response.json())
 //     .then(data => {
 //         productos = data;

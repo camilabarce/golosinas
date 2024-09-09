@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
 
     // Cargar marcas y categorías
-    fetch('http://localhost:3000/brands')
+    fetch('https://golosinas-commerce.up.railway.app/brands')
         .then(response => response.json())
         .then(marcas => {
             const marcaSelect = document.getElementById('marca');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error al cargar marcas:', error));
 
-    fetch('http://localhost:3000/categories')
+    fetch('https://golosinas-commerce.up.railway.app/categories')
         .then(response => response.json())
         .then(categorias => {
             const categoriaSelect = document.getElementById('categoria');
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('categoriaID', categoriaID);
         formData.append('imagen', imagen);
 
-        fetch('http://localhost:3000/products', {
+        fetch('https://golosinas-commerce.up.railway.app/products', {
             method: 'POST',
             body: formData
         })

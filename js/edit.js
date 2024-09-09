@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (productId) {
         // Cargar datos del producto
-        fetch(`http://localhost:3000/products/${productId}`)
+        fetch(`https://golosinas-commerce.up.railway.app/products/${productId}`)
             .then(response => response.json())
             .then(producto => {
                 document.getElementById('descripcion').value = producto.descripcion;
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('imagen-preview').src = "http://localhost:3000" + producto.imagen;
 
                 // Cargar marcas y categorías
-                fetch('http://localhost:3000/brands')
+                fetch('https://golosinas-commerce.up.railway.app/brands')
                     .then(response => response.json())
                     .then(marcas => {
                         const marcaSelect = document.getElementById('marca');
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     })
                     .catch(error => console.error('Error al cargar marcas:', error));
 
-                fetch('http://localhost:3000/categories')
+                fetch('https://golosinas-commerce.up.railway.app/categories')
                     .then(response => response.json())
                     .then(categorias => {
                         const categoriaSelect = document.getElementById('categoria');
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append('imagen', imagenActual);
         }
 
-        fetch(`http://localhost:3000/products/${productId}`, {
+        fetch(`https://golosinas-commerce.up.railway.app/products/${productId}`, {
             method: 'PUT',
             body: formData
         })

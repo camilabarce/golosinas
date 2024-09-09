@@ -1,7 +1,7 @@
 let productos = [];  // Variable global para almacenar los productos
 
 // Fetch para obtener las categorías
-fetch("http://localhost:3000/categories")
+fetch("https://golosinas-commerce.up.railway.app/categories")
   .then(response => response.json())
   .then(categories => {
     cargarCategorias(categories);
@@ -9,7 +9,7 @@ fetch("http://localhost:3000/categories")
   .catch(error => console.error('Error al obtener las categorías:', error));
 
 // Fetch para obtener los productos
-fetch("http://localhost:3000/products")
+fetch("https://golosinas-commerce.up.railway.app/products")
   .then(response => response.json())
   .then(data => {
     productos = data;  // Almacenar los productos en la variable global
@@ -132,7 +132,7 @@ function eliminarProducto(id) {
     denyButtonText: `Cancelar`,
   }).then((result) => {
     if (result.isConfirmed) {
-      fetch(`http://localhost:3000/products/${id}`, {
+      fetch(`https://golosinas-commerce.up.railway.app/products/${id}`, {
         method: "DELETE"
       })
         .then(response => response.json())
